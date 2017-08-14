@@ -1,24 +1,25 @@
-var AllItems = React.createClass({
-  getInitialState() {
-    return { articles: [] }
+var AllArticles = React.createClass({
+  handleDelete(id) {
+    this.props.handleDelete(id);
   },
 
-  componentDidMount() {
-  $.getJSON('/api/v1/articles.json', (response) => { this.setState({ articles: response }) });
-    console.log('Component mounted');
-     },
+  onUpdate(article) {
+    this.props.onUpdate(article);
+  },
 
 
-     render() {
-      var articles= this.state.articles.map((article) => {
-       return (
-        <div key={article.id}>
-          <h3>{article.title}</h3>
-          <p>{article.body}</p> </div>
-          )
+  render() {
+     var articles= this.props.articles.map((article) => {
+        return (
+           <div key={article.id}>
+          <Article article={article} handleDelete={this.handleDelete.bind(this, article.id)} handleUpdate={this.onUpdate}/> </div>
+        )
       });
 
-     return( <div> {articles} </div> ) }
-
-
+     return(
+       <div>
+        {articles}
+       </div>
+     )
+    }
 });

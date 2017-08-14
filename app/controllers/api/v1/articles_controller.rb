@@ -1,4 +1,6 @@
 class Api::V1::ArticlesController < Api::V1::BaseController
+
+
   def index
     respond_with Article.all
   end
@@ -19,8 +21,8 @@ class Api::V1::ArticlesController < Api::V1::BaseController
   end
 
   def update
-    article = Article.find(params[:id])
-    Article.update_attributes(article_params)
+    article = Article.find(params["id"])
+    article.update_attributes(article_params)
     respond_with article, json: article
   end
 
