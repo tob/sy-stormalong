@@ -21,6 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # image uploader gem
 gem 'carrierwave', '0.11.2'
+# image hosting platform
+gem 'cloudinary', '1.2.3'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
