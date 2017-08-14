@@ -1,12 +1,18 @@
 var AllArticles = React.createClass({
+  handleDelete(id) {
+    this.props.handleDelete(id);
+  },
 
-     render() {
-      var articles= this.props.articles.map((article) => {
-       return (
-          <div key={article.id}>
-            <h3>{article.title}</h3>
-            <p>{article.body}</p>
-          </div>
+  onUpdate(article) {
+    this.props.onUpdate(article);
+  },
+
+
+  render() {
+     var articles= this.props.articles.map((article) => {
+        return (
+           <div key={article.id}>
+          <Article article={article} handleDelete={this.handleDelete.bind(this, article.id)} handleUpdate={this.onUpdate}/> </div>
         )
       });
 
