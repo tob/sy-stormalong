@@ -4,12 +4,12 @@ var Body = React.createClass({
   },
 
   componentDidMount() {
-    $.getJSON('/api/v1/articles.json', (response) => { this.setState({ articles: response }) });
+    $.getJSON('/articles.json', (response) => { this.setState({ articles: response }) });
   },
 
   handleDelete(id) {
     $.ajax({
-      url: `/api/v1/articles/${id}`,
+      url: `/articles/${id}`,
       type: 'DELETE',
       success:() => { this.removeArticleClient(id);}
     });
@@ -30,7 +30,7 @@ var Body = React.createClass({
 
    handleUpdate(article) {
       $.ajax({
-        url: `/api/v1/articles/${article.id}`,
+        url: `/articles/${article.id}`,
         type: 'PUT', data: { article: article },
         success: () => {
                 this.updateArticles(article);
