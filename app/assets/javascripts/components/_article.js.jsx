@@ -14,25 +14,26 @@ var Article = React.createClass({
 
     this.setState({ editable: !this.state.editable })
 
+
    },
 
    render() {
      var title = this.state.editable ? <input type='text' ref='title' defaultValue={this.props.article.title} /> : <h3>{this.props.article.title}</h3>;
      var body = this.state.editable ? <input type='text' ref='body' defaultValue={this.props.article.body} />: <p>{this.props.article.body}</p>;
-     var photos = this.props.article.photos.map((photo) => {
-        return (
-          <div key={photo.id}>
-            <img src={photo.image.url} />
-          </div>
-        )
-      });
 
+     //  var photos = this.props.article.photos.map((photo) => {
+     //     return (
+     //       <div key={photo.id}>
+     //         <img src={photo.image.url} />
+     //       </div>
+     //     )
+     //   });
 
       return (
          <div>
          {title}
          {body}
-         {photos}
+         {/* {photos} */}
           <button onClick={this.props.handleDelete} >Delete</button>
           <button onClick={this.handleEdit}>{this.state.editable ? 'Submit' : 'Edit' } </button>
           </div>

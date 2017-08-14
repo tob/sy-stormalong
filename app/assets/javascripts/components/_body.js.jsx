@@ -4,6 +4,10 @@ var Body = React.createClass({
   },
 
   componentDidMount() {
+    this.loadAllArticles()
+  },
+
+  loadAllArticles() {
     $.getJSON('/articles.json', (response) => { this.setState({ articles: response }) });
   },
 
@@ -23,9 +27,8 @@ var Body = React.createClass({
       this.setState({ articles: newArticles });
   },
 
-  handleSubmit(article) {
-     var newState = this.state.articles.concat(article);
-     this.setState({ articles: newState })
+  handleSubmit() {
+    this.loadAllArticles()
    },
 
    handleUpdate(article) {

@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
 def index
-  @articles = Article.all
+  @articles = Article.all.reverse
   @article = Article.new
 end
 # Lorenzo first guess for show
