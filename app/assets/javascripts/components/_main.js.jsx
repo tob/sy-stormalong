@@ -4,9 +4,8 @@ var Main = React.createClass({
   render() {
     return (
       <div>
-        <Header />
-        <h1>Super May</h1>
-
+        <h1>Super Main </h1>
+        <Body />
       </div>
     )
   }
