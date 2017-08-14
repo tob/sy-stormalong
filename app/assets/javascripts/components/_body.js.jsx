@@ -3,9 +3,9 @@ var Body = React.createClass({
     return { articles: [] }
   },
 
-  // componentDidMount() {
-  //   $.getJSON('/api/v1/articles.json', (response) => { this.setState({ articles: response }) });
-  // },
+  componentDidMount() {
+    $.getJSON('/api/v1/articles.json', (response) => { this.setState({ articles: response }) });
+  },
 
   handleSubmit(article) {
      var newState = this.state.articles.concat(article);
