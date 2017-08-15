@@ -1,7 +1,7 @@
 class Api::V1::ArticlesController < Api::V1::BaseController
 
-
   def index
+
     respond_with Article.all
   end
 

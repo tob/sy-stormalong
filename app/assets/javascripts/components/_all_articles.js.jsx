@@ -7,19 +7,20 @@ var AllArticles = React.createClass({
     this.props.onUpdate(article);
   },
 
-
   render() {
-     var articles= this.props.articles.map((article) => {
-        return (
-           <div key={article.id}>
-          <Article article={article} handleDelete={this.handleDelete.bind(this, article.id)} handleUpdate={this.onUpdate}/> </div>
-        )
-      });
 
-     return(
-       <div>
-        {articles}
-       </div>
-     )
-    }
+    const articles = this.props.articles.map((article) => {
+      return (
+        <div key={article.id}>
+          <Article article={article} handleDelete={this.handleDelete.bind(this, article.id)} handleUpdate={this.onUpdate}/>
+        </div>
+      )
+    });
+
+   return(
+     <div>
+      {articles}
+     </div>
+   )
+  }
 });
