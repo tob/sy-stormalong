@@ -7,7 +7,7 @@ def index
 end
 # Lorenzo first guess for show
 def show
-  @article = Article.find(params[:id])
+  @article = Article.find(params["id"])
   @photos = @article.photos
 end
 
