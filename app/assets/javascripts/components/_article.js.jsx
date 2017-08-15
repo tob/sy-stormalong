@@ -31,7 +31,7 @@ var Article = React.createClass({
 
       return (
          <div>
-         {title}
+           <a href={`articles/${this.props.article.id}`}>{title}</a>
          {body}
          {/* {photos} */}
           <button onClick={this.props.handleDelete} >Delete</button>

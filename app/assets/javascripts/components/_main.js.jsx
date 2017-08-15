@@ -6,6 +6,7 @@ var Main = React.createClass({
       <div>
         <h1>Super Main </h1>
         <Body />
+        <Footer />
       </div>
     )
   }
