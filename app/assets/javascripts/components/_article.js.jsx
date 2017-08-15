@@ -32,8 +32,7 @@ var Article = React.createClass({
          <div>
            <a href={`articles/${this.props.article.id}`}>{title}</a>
          {body}
-         {/* {photos} */}
-          <button onClick={this.props.handleDelete} >Delete</button>
+          <button onClick={this.props.handleDelete}>Delete</button>
           <button onClick={this.handleEdit}>{this.state.editable ? 'Submit' : 'Edit' } </button>
           </div>
         )
