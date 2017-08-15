@@ -14,7 +14,6 @@ var Article = React.createClass({
 
     this.setState({ editable: !this.state.editable })
 
-
    },
 
    render() {
