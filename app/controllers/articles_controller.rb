@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
 def index
   @articles = Article.all.reverse
@@ -15,7 +16,7 @@ def create
 end
 
 def destroy
-  @ariticle = Article.destroy(params[:id])
+  @article = Article.destroy(params[:id])
 end
 
 def update
