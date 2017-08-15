@@ -1,7 +1,12 @@
 var OneArticle = React.createClass({
 
   handleDelete(id) {
-    this.props.handleDelete(id);
+    $.ajax({
+      url: `/articles/${id}`,
+      type: 'DELETE',
+      success:() => {
+        window.location.replace('/') }
+    });
   },
 
   onUpdate(article) {
@@ -23,6 +28,7 @@ var OneArticle = React.createClass({
               )
           })}
         </div>
+        <button onClick={this.handleDelete.bind(this, id)}>Delete</button>
       </div>
      )
     }

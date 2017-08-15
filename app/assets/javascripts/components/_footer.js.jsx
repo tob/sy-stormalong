@@ -1,7 +1,7 @@
 var Footer = React.createClass({
  render() {
   return (
-      <div> <h1><a href='/users/sign_in'>Something else</a></h1> </div>
+      <div><p><a href='/users/sign_in'>Log in</a></p></div>
     )
   }
 });
