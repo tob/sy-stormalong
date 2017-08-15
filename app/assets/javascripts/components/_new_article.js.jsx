@@ -3,20 +3,23 @@ var NewArticle= React.createClass({
     var title = this.refs.title.value;
     var body = this.refs.body.value;
       $.ajax({
-        url: '/api/v1/articles',
+        url: '/articles.json',
         type: 'POST',
         data: { article: { title: title, body: body } },
-        success: (article) => {
-          this.props.handleSubmit(article);
+        success: (success) => {
+          this.props.handleSubmit();
         }
       });
     },
 
   render() {
    return (
-    <div> <input ref='title' placeholder='Enter the title of the article' />
-    <input ref='body' placeholder='Enter a dead body' />
-    <button onClick={this.handleClick}>Submit</button> </div>
+    <div>
+      <input ref='title' placeholder='Enter the title of the article' />
+      <input ref='body' placeholder='Enter a dead body' />
+      <button onClick={this.handleClick}>Submit</button>
+
+    </div>
     )
   }
 });

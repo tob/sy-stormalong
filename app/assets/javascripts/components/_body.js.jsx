@@ -4,12 +4,16 @@ var Body = React.createClass({
   },
 
   componentDidMount() {
-    $.getJSON('/api/v1/articles.json', (response) => { this.setState({ articles: response }) });
+    this.loadAllArticles()
+  },
+
+  loadAllArticles() {
+    $.getJSON('/articles.json', (response) => { this.setState({ articles: response }) });
   },
 
   handleDelete(id) {
     $.ajax({
-      url: `/api/v1/articles/${id}`,
+      url: `/articles/${id}`,
       type: 'DELETE',
       success:() => { this.removeArticleClient(id);}
     });
@@ -23,14 +27,13 @@ var Body = React.createClass({
       this.setState({ articles: newArticles });
   },
 
-  handleSubmit(article) {
-     var newState = this.state.articles.concat(article);
-     this.setState({ articles: newState })
+  handleSubmit() {
+    this.loadAllArticles()
    },
 
    handleUpdate(article) {
       $.ajax({
-        url: `/api/v1/articles/${article.id}`,
+        url: `/articles/${article.id}`,
         type: 'PUT', data: { article: article },
         success: () => {
                 this.updateArticles(article);
